@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "FormFiller Simple",
+  "version": "0.2.0",
+  "description": "Fill Google Forms using saved profile (user-triggered injection)",
+  "action": { "default_popup": "popup.html", "default_icon": "icons/icon-128.png" },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "icons": { "128": "icons/icon-128.png" }
+}

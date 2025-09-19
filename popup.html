@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FormFiller</title>
+<style>
+  body{font-family:Arial;padding:10px;width:360px}
+  label{display:block;margin-top:8px}
+  input[type=text]{width:100%}
+  .row{display:flex;gap:8px;align-items:center}
+  .small{font-size:12px;color:#444}
+  .field-list{max-height:130px;overflow:auto;border:1px solid #eee;padding:6px;margin-top:6px}
+  button{margin-top:8px}
+</style>
+</head>
+<body>
+  <h3>Profile</h3>
+
+  <label>Name<br><input id="name" type="text"></label>
+  <label>Emails (comma separated)<br><input id="emails" type="text"></label>
+  <label>Phone<br><input id="phone" type="text"></label>
+  <label>LinkedIn URL<br><input id="linkedin" type="text"></label>
+  <label>GitHub URL<br><input id="github" type="text"></label>
+
+  <label class="small">Custom fields (add any label you want; they will be matched to questions)</label>
+  <div class="row">
+    <input id="customKey" type="text" placeholder="Field label (e.g., college)">
+    <input id="customValue" type="text" placeholder="Value">
+    <button id="addCustom">Add</button>
+  </div>
+  <div class="field-list" id="customList"></div>
+
+  <div style="margin-top:10px">
+    <label>Storage: 
+      <select id="storageSelect">
+        <option value="sync">chrome.storage.sync</option>
+        <option value="local">chrome.storage.local</option>
+      </select>
+    </label>
+  </div>
+
+  <div style="margin-top:10px" class="row">
+    <button id="save">Save profile</button>
+    <button id="fill">Fill current form</button>
+  </div>
+
+  <div style="margin-top:10px" class="row">
+    <button id="export">Export JSON</button>
+    <button id="deleteProfile">Delete profile</button>
+  </div>
+
+  <p class="small">By clicking Fill you grant the extension permission to run on the active tab. This extension stores values only in your browser storage. <a href="#" id="privacyLink">Privacy policy</a></p>
+
+<script src="popup.js"></script>
+</body>
+</html>
